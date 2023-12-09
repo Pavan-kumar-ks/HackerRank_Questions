@@ -1,0 +1,53 @@
+In this question I was asked to create a function which conatins three parameters , a pointer variable named marks , variable named number_of_students and variable gender.
+A dynamic array was created and the marks was stored in that dynamic array . 
+A function was asked to build a logic in which when the user inputs the parameter as boy the function should add alternative even indexes and return the result.
+In the same way when the user inputs the parameter as girl the alternative odd indexes were added and retured the result.
+
+Below is the code which I used to solve this question:
+
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+//Complete the following function.
+
+int marks_summation(int* marks, int number_of_students, char gender) 
+{
+    int sum1 = 0;
+    
+    for(int i = 0;i<number_of_students;i = i+2)
+    {
+        sum1 = sum1 + *(marks+i);
+    }
+    int sum2 = 0;
+    for(int j = 1;j<number_of_students; j = j+2)
+    {
+        sum2 = sum2 + *(marks+j);  
+    }
+    if(gender=='b')
+    return sum1;
+    else 
+    return sum2;
+    
+}
+
+int main() {
+    int number_of_students;
+    char gender;
+    int sum;
+  
+    scanf("%d", &number_of_students);
+    int *marks = (int *) malloc(number_of_students * sizeof (int));
+ 
+    for (int student = 0; student < number_of_students; student++) {
+        scanf("%d", (marks + student));
+    }
+    
+    scanf(" %c", &gender);
+    sum = marks_summation(marks, number_of_students, gender);
+    printf("%d", sum);
+    free(marks);
+ 
+    return 0;
+}
