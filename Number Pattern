@@ -1,0 +1,63 @@
+The problem statment is as follows:
+Print a pattern of numbers from  to  as shown below. Each of the numbers is separated by a single space.
+
+                            4 4 4 4 4 4 4  
+                            4 3 3 3 3 3 4   
+                            4 3 2 2 2 3 4   
+                            4 3 2 1 2 3 4   
+                            4 3 2 2 2 3 4   
+                            4 3 3 3 3 3 4   
+                            4 4 4 4 4 4 4  
+
+Constraints :
+1<= n <= 1000
+
+I was asked to write the logic to print the above pattern and the only input was 'n'.
+I will try to explain my logic with the code :
+
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() 
+{
+    int n;
+    scanf("%d", &n);
+    int i,j;
+    int sz = 2 * n - 1; // I have created a variable sz which calculates the square matrix size.
+    int a[sz][sz]; // This creates a two dimensional array of the required size which is calculated using sz fromn.
+    int start =0; // This is the starting variable .
+    int end = sz-1; // This is the end which is taken in terms of order.
+    while(n != 0)
+    {
+        for(i=start;i<=end;i++) // This intailizes the loop from the first index
+        {
+            for(j=start;j<=end;j++) // This intializes the second loop 
+            {
+                if(i == start || i == end || j == start || j == end ) //This condition is checked . for an example if i==  0 == start then place the value of n in a[0][0] ie a[i][j].
+                //this condition checks wheather the index is in top or bottom or left or right . So we have used || not &&.
+                {
+                    a[i][j] = n;
+                }
+            }
+        }
+        // The values are incremented and decremented respectievly
+        start++;
+        end--;
+        n--;
+    }
+    for(i=0;i<sz;i++) //The condition is taken as sz because we are iterating for the size of square matrix.Don't get confused between n and sz; n is for pattern and sz is size of 2D matrix.
+    {
+        for(j=0;j<sz;j++)
+        {
+            printf("%d ",a[i][j]);
+                
+        }
+        printf("\n");
+    }
+    
+    return 0;
+}
+
+Hope this helps :)
