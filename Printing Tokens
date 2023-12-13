@@ -1,0 +1,35 @@
+The problem statment is given as :
+Given a sentence,s, print each word of the sentence in a new line.
+
+Constraints:
+1<= len(s) <=1000
+
+The string which is given as input is stored dynamically.I was asked to print the text in the next line after every word. 
+Below is the logic I used to solve this problem.
+
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+
+    char *s;
+    s = malloc(1024 * sizeof(char));
+    scanf("%[^\n]", s);
+    s = realloc(s, strlen(s) + 1);
+    int n = strlen(s); // calculates the length of the string and stores it's value in n.
+    for(int i=0;i<n;i++)
+    {
+        printf("%c",s[i]);// Prints the characters
+        if(s[i] == ' ')// Checks if the cursor encounters a blank space it executes the condition.
+        {
+            printf("\n");//Prints a new line character
+
+        }
+    continue;//Makes the loop to iterate again once the condition is checked.
+    }
+    return 0;
+}
+
+Hope this helps :)
