@@ -1,0 +1,44 @@
+Given a string,s , consisting of alphabets and digits, find the frequency of each digit in the given string.
+
+Constraints:
+1<= len(num) <=1000
+
+I was given a string which contains alphabets and numbers . 
+I need to print how many times a number has repeated in the given string.
+So for this I need to take the input string first.
+I need to iterate loop till the string length.
+I need to check if the first character is between strings 0 and 9.
+If it is true , then inside the condition I should convert that string to integer.
+Then that character which was converted to integer should be stored in integer array.
+Then I print the newly stored values of integer array.
+
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+
+    int i=0,j,b[10]={0};
+    char num[1000];
+    scanf("%s",num);
+    for(i=0;i<strlen(num);i++)//iterates until the given string lenght reaches end 
+    {
+        if(num[i]>='0' && num[i]<='9')//checks wheather the given digit ascii value is greater than 0 and less than 9
+        {
+            int a;
+            a = num[i] - '0';
+            b[a]++;
+            a = num[i] - '0': This subtracts the character code of '0' from the character code of num[i]. For example, a = 55 - 48 = 7.
+            b[a]++;: This increments the element in the b array at the index corresponding to the extracted digit (a). Since a is 7, b[7] is incremented by 1.
+        }
+    }
+    for(i=0;i<10;i++)
+    {
+        printf("%d ",b[i]);//prints the respective repetations for each digit .Like for b[0] the number of iteration is 5 this was stored from the loop.
+    }
+    
+    return 0;
+}
+
+Hope this helps :)
