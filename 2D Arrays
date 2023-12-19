@@ -1,0 +1,37 @@
+This is a hourglass problem which follows the below order
+  a b c
+    d
+  e f g
+
+The matrix elements are added in the above order and we need to return the maximum of all the additions in a 6x6 matrix.
+Below is the logic I applied to solve this probelm.
+
+#include<stdio.h>
+int main()
+
+{
+    int i,j,a[6][6],sum,max=0,f=1;
+    for(i=0;i<6;i++)
+    {
+        for(j=0;j<6;j++)
+        {
+            scanf("%d",&a[i][j]);
+        }
+    }
+    for(i=1;i<5;i++)//since the last row and column can not be a hourglass .
+    {
+        for(j=1;j<5;j++)
+        {
+            sum = a[i][j]+a[i-1][j-1]+a[i-1][j]+a[i-1][j+1]+a[i+1][j-1]+a[i+1][j]+a[i+1][j+1];
+            
+        if(f==1)
+        {
+            max = sum;
+            f=0;//ends the loop as we have got the max value.
+        }
+        if(max<sum)
+        max = sum;//Iterates until the sum is set to maximum .
+        }
+    }
+    printf("%d",max);
+}
