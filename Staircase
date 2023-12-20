@@ -1,0 +1,33 @@
+Below is the patter I was asked to print
+   #
+  ##
+ ###
+####
+
+Constraints:
+
+0<= n <=100
+
+Below is the logic which I used to print the required output:
+
+#include <stdio.h>
+#include<stdlib.h>
+int main() {
+   int i,j,n;
+   scanf("%d",&n);
+   for(i=0;i<n;i++)
+   {
+       for(j=0;j<n;j++)
+       {
+           if(j<n-i-1)
+           printf(" ");
+           else
+           printf("#");
+       }
+       printf("\n");
+   }
+
+    return 0;
+}
+
+Hope this helps :)
