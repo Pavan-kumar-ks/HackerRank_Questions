@@ -1,0 +1,42 @@
+Problem statment is as follows:
+
+Given a time in 12-hour AM/PM format, convert it to military (24-hour) time.
+
+Note: - 12:00:00AM on a 12-hour clock is 00:00:00 on a 24-hour clock.
+- 12:00:00PM on a 12-hour clock is 12:00:00 on a 24-hour clock.
+
+Constraints:
+
+All input times are valid
+
+The logic which I used is as followa:
+
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+int main()
+{
+    char t[10];
+    scanf("%s",t);
+    if(t[8]=='P')
+    {
+      if(t[0] != '1' || t[1]!= '2')
+      {
+          t[0]++;
+          t[1] += 2;
+      }
+    }  
+    else
+    {
+        if(t[0]=='1' && t[1]=='2')
+        {
+            t[0]=t[1]='0';
+        }
+    }
+    t[8]='\0';
+    printf("%s",t);
+    
+    return 0;
+}
+
+Hope this helps:)
