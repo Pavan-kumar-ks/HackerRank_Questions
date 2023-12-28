@@ -1,0 +1,33 @@
+The problem statment is as follows:
+
+A left rotation operation on an array of size  shifts each of the array's elements  unit to the left.
+Given an integer, d, rotate the array that many steps left and return the result.
+
+The solution is as follows:
+
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+    int n,d,temp;
+    scanf("%d %d",&n,&d);
+    int a[n],b[n];//I have created two array each with same size . Array 'a' is used to take the input and array 'b' is used for storing the elemnets of left rotated array.
+    int i;
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    for(i=0;i<n;i++)//this for looops runs for array 'b'.
+    {
+        b[i] = a[d];//here first index of array 'b' is inserted with the index value of 'd' which is the specified number of rotations,this indexd element is inserted in the first index of array 'b'.
+        d++;//and the spceifeid number of rotations is incremented everytime.
+        
+        if(d == n)//when the specified number of rotations reaches the final array size it is again intialized to zero in this condition,so it moves to the first index in which it follows the order.
+        {
+            d = 0;
+        }
+        printf("%d ",b[i]);
+    }
+}
+
+Hope this helps :)
