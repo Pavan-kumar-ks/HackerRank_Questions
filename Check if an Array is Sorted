@@ -1,0 +1,46 @@
+Given an array of size n, write a program to check if the given array is sorted in (ascending / Increasing / Non-decreasing) order or not. 
+If the array is sorted then return True, Else return False.
+
+CODE:
+
+#include<stdio.h>
+#include<stdlib.h>
+
+bool sort(int a[],int sz)
+{
+    for(int i=0;i<sz;i++)
+    {
+        if(a[i]<a[i+1])
+        {
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+}
+
+int main()
+{
+    int size,i,j;
+    printf("enter the size of array\n");
+    scanf("%d",&size);
+    int a[size];
+    printf("enter array elemnts \n");
+    for(i=0;i<size;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    int result = sort(a,size);
+    if(result == true)
+    {
+        printf("the array is sorted\n");
+    }
+    else
+    {
+        printf("the array is not sorted\n");
+    }
+
+}
+
+Hope this helps :)
