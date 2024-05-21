@@ -1,0 +1,39 @@
+Problem Statement: Given an array of N integers, left rotate the array by one place.
+
+CODE:
+
+#include<stdio.h>
+#include<stdlib.h>
+#include<ctype.h>
+
+void rotate(int a[],int n)
+{
+    int temp,i;
+    temp = a[0];
+    for(i=0;i<n;i++)
+    {
+        a[i] = a[i+1];
+    }
+    a[n-1] = temp;
+    printf("the rotated array is \n");
+    for(i=0;i<n;i++)
+    {
+        printf("%d ",a[i]);
+    }
+}
+
+int main()
+{
+    int n;
+    printf("enter the size of an array\n");
+    scanf("%d",&n);
+    int a[n];
+    printf("enter the array elements\n");
+    for(int i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    rotate(a,n);
+}
+
+Hope this helps :)
